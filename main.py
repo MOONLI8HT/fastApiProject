@@ -65,7 +65,7 @@ async def create_item(item: Item):
 
 @app.post("/items/dict/")
 async def create_item(item: Item):
-    item_dict = item.dict()
+    item_dict = item.__dict__
     if item.tax:
         price_with_tax = item.price + item.tax
         item_dict.update({"price_with_tax": price_with_tax})

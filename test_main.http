@@ -16,6 +16,6 @@ Accept: application/json
 ###
 
 POST http://127.0.0.1:8000/items/dict/
-Accept: application/json/status
+Accept: application/json
 
 ###
