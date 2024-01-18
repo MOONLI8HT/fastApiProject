@@ -5,11 +5,17 @@ Accept: application/json
 
 ###
 
+GET http://127.0.0.1:8000/models/lenet
+Accept: application/json
+
+###
+
 POST http://127.0.0.1:8000/items/
 Accept: application/json
 
 ###
 
-GET http://127.0.0.1:8000/models/lenet
-Accept: application/json
+POST http://127.0.0.1:8000/items/dict/
+Accept: application/json/status
 
+###

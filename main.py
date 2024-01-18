@@ -60,6 +60,11 @@ async def get_model(model_name: ModelName):
 
 @app.post("/items/")
 async def create_item(item: Item):
+    return item
+
+
+@app.post("/items/dict/")
+async def create_item(item: Item):
     item_dict = item.dict()
     if item.tax:
         price_with_tax = item.price + item.tax
