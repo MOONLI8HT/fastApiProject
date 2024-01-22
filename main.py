@@ -25,7 +25,7 @@ items = []
 
 @app.get("/")
 async def root():
-    return {1: 1, "2": 2}
+    return {"Hello": 'World'}
 
 
 @app.get("/arange/{size}")
@@ -63,10 +63,6 @@ async def create_item(item: Item):
     return item
 
 
-@app.post("/items/dict/")
-async def create_item(item: Item):
-    item_dict = item.__dict__
-    if item.tax:
-        price_with_tax = item.price + item.tax
-        item_dict.update({"price_with_tax": price_with_tax})
-    return item_dict
+@app.put("/items/{item_id}")
+async def update_item(item_id: int, item: Item):
+    return {"item_id": item_id, **item.dict()}
