@@ -1,8 +1,8 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 import numpy as np
 from enum import Enum
 from pydantic import BaseModel
-from typing import Union
+from typing import Union, Annotated
 
 
 class ModelName(str, Enum):
@@ -58,9 +58,13 @@ async def get_model(model_name: ModelName):
     return {"model_name": model_name, "message": "Have some residuals"}
 
 
-@app.post("/items/")
-async def create_item(item: Item):
-    return item
+@app.get("/items/")
+async def read_items(q: Annotated[str | None, Query(min_length=3, max_length=50)] = None):
+    # [OLD VER] -> "q: Union[str, None] = Query(default=None, max_length=50)"
+    results = {"items": [{"item_id": "Foo"}, {"item_id": "Bar"}]}
+    if q:
+        results.update({"q": q})
+    return results
 
 
 @app.put("/items/{item_id}")
