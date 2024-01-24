@@ -10,7 +10,7 @@ Accept: application/json
 
 ###
 
-PUT http://127.0.0.1:8000/items/1
+GET http://127.0.0.1:8000/items/?q=1
 Accept: application/json
 
 ###
