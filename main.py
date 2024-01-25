@@ -68,8 +68,9 @@ async def read_items(
             description="Query string for the items to search in the database that have a good match",
             min_length=3,
             max_length=50,
-            pattern="^fixedquery$",
-            deprecated=True,
+            pattern="^fixedquery$",     # ReExp
+            deprecated=True,            # Old functional
+            include_in_schema=False     # Don't show in OpenAPI schema
         ),
     ] = None,
 ):
