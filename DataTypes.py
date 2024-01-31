@@ -5,7 +5,7 @@ from fastapi import Body, FastAPI
 
 app = FastAPI()
 # Запускаем через терминал, используя следующий код
-# uvicorn dataTypes:app --reload
+# uvicorn DataTypes:app --reload
 
 # Для проверки результата переходим в документацию
 # http://127.0.0.1:8000/docs
