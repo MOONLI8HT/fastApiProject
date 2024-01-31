@@ -2,7 +2,7 @@ from fastapi import Cookie, FastAPI
 
 app = FastAPI()
 # Запускаем через терминал, используя следующий код
-# uvicorn cookieParam:app --reload
+# uvicorn CookieParam:app --reload
 
 # Для проверки результата переходим в документацию
 # http://127.0.0.1:8000/docs
