@@ -1,0 +1,9 @@
+# curl -X 'GET'
+#  'http://127.0.0.1:8000/tokens/'
+#  -H 'accept: application/json'
+#  -H 'x-token: X-Token: foo X-Token: bar'
+GET http://127.0.0.1:8000/tokens/
+accept: application/json
+X-Token: foo
+X-Token: bar
+###
